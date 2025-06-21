@@ -21,6 +21,6 @@ export async function getAmberLocation(req, res) {
 export async function getTitleKid(req, res) {
     console.log("getting home screen child info...");
     const kid = await Kid.find();
-    res.json(kid);
+    res.json(kid[0]);
 }
 

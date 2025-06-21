@@ -1,6 +1,7 @@
 import MapView, { Marker } from 'react-native-maps';
 import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { SERVER_URL } from '@/config';
 
 interface mapProps{
     amberActive: boolean
@@ -14,7 +15,7 @@ interface Location {
 
 const fetchAllLocations = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("http://10.200.9.5:3000/people/locations");
+        const response = await fetch(`${SERVER_URL}/people/locations`);
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
@@ -29,7 +30,7 @@ const fetchAllLocations = async (): Promise<Location[]> => {
 
 const fetchAmberLocation = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("http://10.200.9.5:3000/people/amber");
+        const response = await fetch(`${SERVER_URL}/people/amber`);
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
