@@ -7,14 +7,13 @@ interface mapProps{
 interface Location {
   title: string;
   description: string;
-  lat: string;
-  long: string;
-  date: string;
+  lat: number;
+  long: number;
 }
 
 const fetchAllLocations = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("https://localhost:8080/people/locations"); // random url for now
+        const response = await fetch("http://10.200.9.5:3000/people/locations"); // random url for now
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
@@ -29,7 +28,7 @@ const fetchAllLocations = async (): Promise<Location[]> => {
 
 const fetchAmberLocation = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("https://localhost:8080/people/amber"); // random url for now
+        const response = await fetch("http://10.200.9.5:3000/people/amber"); // random url for now
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
@@ -39,7 +38,6 @@ const fetchAmberLocation = async (): Promise<Location[]> => {
             description: json.description,
             lat: json.lat,
             long: json.long,
-            date: json.date,
         }];
     }
     catch (error) {
@@ -71,7 +69,7 @@ export default function Map({amberActive}: mapProps) {
             {locations.map((entry, index) => (
                 <Marker
                     key={index}
-                    coordinate={{latitude: parseFloat(entry.lat), longitude: parseFloat(entry.long)}}
+                    coordinate={{latitude: entry.lat, longitude: entry.long}}
                     title={entry.title}
                     description={entry.description}
                 />

@@ -8,7 +8,7 @@ export default function HomeAmberInfo() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://localhost:8080/people/amber"); // random url for now
+                const response = await fetch("http://10.200.9.5:3000/people/kid"); // random url for now
                 if (!response.ok){
                     setInfoText("Failed to retrieve AMBER ALERT data.");
                     throw new Error(`Response status: ${response.status}`);

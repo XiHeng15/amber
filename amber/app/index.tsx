@@ -5,7 +5,7 @@ import Map from "@/components/Map";
 import { useState } from "react";
 
 export default function HomeScreen() {
-  const [amberActive, setAmberActive] = useState(true);
+  const [amberActive, setAmberActive] = useState(false);
 
   return (
     <View style={styles.container}>
