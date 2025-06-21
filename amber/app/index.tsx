@@ -9,8 +9,8 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <HomeAmberInfo/>
       <Map amberActive={amberActive}/>
+      <HomeAmberInfo/>
     </View>
   );
 }
@@ -18,7 +18,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#000'
   }
 });

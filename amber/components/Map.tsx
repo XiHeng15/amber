@@ -82,6 +82,7 @@ export default function Map({amberActive}: mapProps) {
 const styles = StyleSheet.create({
     map: {
         flex: 1,
-        width: '100%'
+        width: '100%',
+        maxHeight: '94%',
     }
 });

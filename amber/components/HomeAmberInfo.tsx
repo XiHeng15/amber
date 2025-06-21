@@ -36,12 +36,15 @@ export default function HomeAmberInfo() {
     );
 }
 
-
 const styles = StyleSheet.create({
     container: {
+        position: 'absolute',
+        bottom: 0,
         padding: 10,
-        borderRadius: 10,
-        backgroundColor: 'rgba(200, 101, 21, 0.5)'
+        marginBottom: '6%',
+        borderTopStartRadius: 10,
+        borderTopEndRadius: 10,
+        backgroundColor: 'rgba(200, 101, 21, 0.75)'
     },
     text: {
         fontSize: 24,
