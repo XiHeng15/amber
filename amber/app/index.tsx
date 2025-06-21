@@ -10,9 +10,9 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* <FaceButton
+      <FaceButton
       size={100}
-      /> */}
+      />
       <Map amberActive={amberActive}/>
       <HomeAmberInfo/>
     </View>

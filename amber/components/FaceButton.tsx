@@ -12,7 +12,7 @@ export default function FaceButton({ size, fillColor = "#000000"}: FaceButtonPro
   const router = useRouter();
   return (
     <TouchableHighlight onPress={() => router.push('../app/facial_recognition')}>
-      <View style={{width: size, height: size}}>
+      <View style={{width: size, height: size, position: 'absolute'}}>
         <Svg width={size * 0.8} height={size * 0.8} viewBox="-51.2 -51.2 614.40 614.40">
           <Polygon 
             points="132.414,360.484 89.489,360.484 89.489,317.551 64.915,317.551 64.915,385.058 132.414,385.058" 
