@@ -1,5 +1,6 @@
 import MapView, { Marker } from 'react-native-maps';
 import { useEffect, useState } from 'react';
+import { StyleSheet } from 'react-native';
 
 interface mapProps{
     amberActive: boolean
@@ -13,7 +14,7 @@ interface Location {
 
 const fetchAllLocations = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("http://10.200.9.5:3000/people/locations"); // random url for now
+        const response = await fetch("http://10.200.9.5:3000/people/locations");
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
@@ -28,7 +29,7 @@ const fetchAllLocations = async (): Promise<Location[]> => {
 
 const fetchAmberLocation = async (): Promise<Location[]> => {
     try {
-        const response = await fetch("http://10.200.9.5:3000/people/amber"); // random url for now
+        const response = await fetch("http://10.200.9.5:3000/people/amber");
         if (!response.ok){
             throw new Error(`Response status: ${response.status}`);
         }
@@ -58,7 +59,7 @@ export default function Map({amberActive}: mapProps) {
     }, [amberActive]);
 
     return (
-        <MapView
+        <MapView style={styles.map}
             initialRegion={{
             latitude: 43.515314425916664,
             longitude: -80.51357570258793,
@@ -77,3 +78,10 @@ export default function Map({amberActive}: mapProps) {
         </MapView>
     );
 }
+
+const styles = StyleSheet.create({
+    map: {
+        flex: 1,
+        width: '100%'
+    }
+});
