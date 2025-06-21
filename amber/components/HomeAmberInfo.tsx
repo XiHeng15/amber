@@ -36,14 +36,19 @@ const styles = StyleSheet.create({
     container: {
         position: 'absolute',
         bottom: 0,
-        padding: 10,
-        marginBottom: '6%',
+        padding: 20,
+        paddingBottom: '10%',
+        marginBottom: '8%',
+        marginRight: 20,
+        marginLeft: 20,
         borderTopStartRadius: 10,
         borderTopEndRadius: 10,
-        backgroundColor: 'rgba(200, 101, 21, 0.75)'
+        borderBottomEndRadius: 10,
+        borderBottomStartRadius: 10,
+        backgroundColor: '#5e554c'
     },
     text: {
-        fontSize: 24,
-        color: '#000'
+        fontSize: 14,
+        color: '#ffcb6d',
     }
 });
